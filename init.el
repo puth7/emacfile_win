@@ -26,7 +26,7 @@
 
 ;;auctex
 ;;flycheck
-;; helm-sage
+;; helm-sage   
 ;;sage-shell-mode ;; install to have support on sage file
 ;;flyspell
 
@@ -136,6 +136,10 @@
   (add-hook hook (lambda () (flyspell-mode -1))))
 ;;----------------------------------------
 
+
+;;--------------------------------------------------------------------
+(server-start)
+;;-------------------------------------------------------
 ;;(require 'cygwin-mount)
 ;;(cygwin-mount-activate)
 
