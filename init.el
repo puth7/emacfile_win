@@ -23,7 +23,7 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t) )
 
 ;;probably needed:
-;; magit
+
 ;;auctex
 ;;flycheck
 ;; helm-sage
