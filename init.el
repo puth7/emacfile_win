@@ -1,7 +1,7 @@
 ;;-- ------------------------------------------
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
 ;; (set-register ?1 (cons 'file "E:/puth/Documents/putranto/tue/s3/coding_theory/binary_puzzle_as_erasure_decoding/binary_puzzle_as_erasure_coding.tex" ))
-(set-register ?t 'eshell)
+
 (global-set-key "\C-x\ \T" 'eshell)
 ;;--------------------------------------------
 
@@ -164,23 +164,23 @@
 
 ;; ;;   LATEX   ;;
 ;; ;;--------------------------------------------
-;; ;;;latex normal font-only work with auctex
-;; ;; Only change sectioning colour
-;; (setq font-latex-fontify-sectioning 'color)
-;; ;; super-/sub-script on baseline
-;; (setq font-latex-script-display (quote (nil)))
-;; ;; Do not change super-/sub-script font
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(font-latex-subscript-face ((t nil)))
-;;  '(font-latex-superscript-face ((t nil))))
-;; ;; Exclude bold/italic from keywords
-;; (setq font-latex-deactivated-keyword-classes
-;;       '("italic-command" "bold-command" "italic-declaration" "bold-declaration"))
-;; ;;  (eval-after-load "tex-mode" '(fset 'tex-font-lock-suscript 'ignore)) ;; disable auto subscript for latex file
+;;;latex normal font-only work with auctex
+;; Only change sectioning colour
+(setq font-latex-fontify-sectioning 'color)
+;; super-/sub-script on baseline
+(setq font-latex-script-display (quote (nil)))
+;; Do not change super-/sub-script font
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-latex-subscript-face ((t nil)))
+ '(font-latex-superscript-face ((t nil))))
+;; Exclude bold/italic from keywords
+(setq font-latex-deactivated-keyword-classes
+      '("italic-command" "bold-command" "italic-declaration" "bold-declaration"))
+;;  (eval-after-load "tex-mode" '(fset 'tex-font-lock-suscript 'ignore)) ;; disable auto subscript for latex file
 ;; ;;--------------------------------------------
 
 ;; ;;--------------------------------------------
