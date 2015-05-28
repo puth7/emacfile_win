@@ -1,7 +1,8 @@
 ;;-- ------------------------------------------
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
-(set-register ?1 (cons 'file "E:/puth/Documents/putranto/tue/s3/coding_theory/binary_puzzle_as_erasure_decoding/binary_puzzle_as_erasure_coding.tex" ))
-
+;; (set-register ?1 (cons 'file "E:/puth/Documents/putranto/tue/s3/coding_theory/binary_puzzle_as_erasure_decoding/binary_puzzle_as_erasure_coding.tex" ))
+(set-register ?t 'eshell)
+(global-set-key "\C-x\ \T" 'eshell)
 ;;--------------------------------------------
 
 ;;------------------------------------------------
