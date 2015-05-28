@@ -37,6 +37,10 @@
 (global-linum-mode 1)
 ;;--------------------------------------------
 
+;;--------------------------------------------
+;;disable toolbar
+(tool-bar-mode -1)
+;;--------------------------------------------
 
 ;;--------------------------------------------
 ;;enter auto indent
@@ -131,6 +135,12 @@
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 ;;----------------------------------------
+
+;;(require 'cygwin-mount)
+;;(cygwin-mount-activate)
+
+;; (setq sage-shell:sage-root "/usr/local/sage")
+;; (setq sage-shell:sage-executable "c:/cygwin64/usr/local/sage/local/bin")
 
 ;;--------------------------------------------
 ;; ;;flycheck on sage
