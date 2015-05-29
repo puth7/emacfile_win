@@ -6,12 +6,12 @@
 ;;--------------------------------------------
 
 ;;------------------------------------------------
-;;recent file open
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-;;--------------------------------------------
+;; ;;recent file open  -> better to use helm recentf
+;; (require 'recentf)
+;; (recentf-mode 1)
+;; (setq recentf-max-menu-items 25)
+;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+;; ;;--------------------------------------------
 
 ;;--------------------------------------------
 (define-key global-map (kbd "<apps>") 'execute-extended-command);; untuk winsdows (komoputer kantor
@@ -106,9 +106,10 @@
 
 (helm-mode 1)
 ;;(global-set-key (kbd "C-c f") 'helm-projectile)
-(global-set-key (kbd "C-c h o") 'helm-occur)
+(global-set-key (kbd "M-s o") 'helm-occur)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
 (helm-autoresize-mode t)
 ;;--------------------------------------------
 
@@ -137,6 +138,12 @@
   (add-hook hook (lambda () (flyspell-mode -1))))
 ;;----------------------------------------
 
+;;---------------------------
+;;magit shortcut/set key
+(global-set-key (kbd "C-x v c") 'magit-commit)
+(global-set-key (kbd "C-x v f") 'magit-pull)
+(global-set-key (kbd "C-x v p") 'magit-push)
+;;------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------
 (server-start)
@@ -196,7 +203,7 @@
 
 
 ;; ;;--------------------------------------------
-;; ;;inverse/forward search mode latex
+;; ;;;;inverse/forward search mode latex -> for linux
 ;; ;;(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 ;; ;;(setq TeX-source-correlate-start-server t)
 ;; ;;---------------------------
@@ -256,7 +263,7 @@
 ;; ;;--------------------------------------------
 
 ;; ;;--------------------------------------------
-;; ;;sync inverse forward search
+;; ;;sync inverse forward search -> for windows
 ;; (custom-set-variables
 ;;  ;; custom-set-variables was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
