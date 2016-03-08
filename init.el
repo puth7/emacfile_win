@@ -14,7 +14,7 @@
 ;; ;;--------------------------------------------
 
 ;;--------------------------------------------
-(define-key global-map (kbd "<apps>") 'execute-extended-command);; untuk winsdows (komoputer kantor
+(define-key global-map (kbd "<apps>") 'helm-M-x);; untuk winsdows (komoputer kantor
 ;;----------------------------------------
 
 ;;--------------------------------------------
@@ -106,7 +106,7 @@
       helm-ff-file-name-history-use-recentf t)
 
 (helm-mode 1)
-;;(global-set-key (kbd "C-c f") 'helm-projectile)
+(global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "M-s o") 'helm-occur)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -213,7 +213,7 @@
 
 ;; ;;---------------------------
 ;;enable math mode
-(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+;;(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 ;; ;;-------------------------------
 
 ;; ;;----------------------------------------
