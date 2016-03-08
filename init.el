@@ -2,7 +2,7 @@
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
 ;; (set-register ?1 (cons 'file "E:/puth/Documents/putranto/tue/s3/coding_theory/binary_puzzle_as_erasure_decoding/binary_puzzle_as_erasure_coding.tex" ))
 
-(global-set-key "\C-x\ \T" 'eshell)
+(global-set-key "\M-x\ \t" 'eshell)
 ;;--------------------------------------------
 
 ;;------------------------------------------------
@@ -22,6 +22,7 @@
   (require 'package)
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t) )
+
 
 ;;probably needed:
 
@@ -45,7 +46,7 @@
 
 ;;--------------------------------------------
 ;;enter auto indent
-(setq auto-indent-on-visit-file t) ;; If you want auto-indent on for files
+;;(setq auto-indent-on-visit-file t) ;; If you want auto-indent on for files
 (require 'auto-indent-mode)
 (auto-indent-global-mode)
 ;;(electric-indent-mode 1)
@@ -59,8 +60,8 @@
 ;; (add-hook 'sage-shell:sage-mode-hook 'set-sage-newline-and-indent)
 (add-to-list 'auto-indent-disabled-modes-list 'sage-shell:sage-mode)
 (defun set-newline-and-indent ()
-  "Map the return key with `newline-and-indent'"
-  (local-set-key (kbd "RET") 'newline-and-indent))
+ "Map the return key with `newline-and-indent'"
+ (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'sage-shell:sage-mode-hook 'set-newline-and-indent)
 ;;------------------------------------------
 
@@ -114,10 +115,10 @@
 ;;--------------------------------------------
 
 ;;------------------------------------------------
-(require 'helm-projectile)
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
+;; (require 'helm-projectile)
+;; (projectile-global-mode)
+;; (setq projectile-completion-system 'helm)
+;; (helm-projectile-on)
 ;;------------------------------------------------
 
 ;;---------------------
@@ -139,14 +140,15 @@
 ;;----------------------------------------
 
 ;;---------------------------
+
 ;;magit shortcut/set key
-(global-set-key (kbd "C-x v c") 'magit-commit)
-(global-set-key (kbd "C-x v f") 'magit-pull)
-(global-set-key (kbd "C-x v p") 'magit-push)
+;; (global-set-key (kbd "C-x v c") 'magit-commit)
+;; (global-set-key (kbd "C-x v f") 'magit-pull)
+;; (global-set-key (kbd "C-x v p") 'magit-push)
 ;;------------------------------------------------------------------
 
 ;;--------------------------------------------------------------------
-(server-start)
+;; (server-start)
 ;;-------------------------------------------------------
 ;;(require 'cygwin-mount)
 ;;(cygwin-mount-activate)
@@ -202,16 +204,16 @@
 ;; ;;--------------------------------------------
 
 
-;; ;;--------------------------------------------
-;; ;;;;inverse/forward search mode latex -> for linux
-;; ;;(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
-;; ;;(setq TeX-source-correlate-start-server t)
-;; ;;---------------------------
+;; ;; ;;--------------------------------------------
+;; ;; ;; inverse/forward search mode latex -> for linux
+;; (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+;; (setq TeX-source-correlate-start-server t)
+;; ;; ;;---------------------------
 
 
 ;; ;;---------------------------
-;; ;;enable math mode
-;; (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+;;enable math mode
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 ;; ;;-------------------------------
 
 ;; ;;----------------------------------------
@@ -224,9 +226,9 @@
 ;; ;;----------------------------------------
 
 ;; ;;----------------------------------------
-;; ;;(add-hook 'latex-mode-hook 'turn -on-reftex) 
-;; ;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-;; ;; (setq reftex-plug-into-AUCTex t)
+(add-hook 'latex-mode-hook 'turn-on-reftex) 
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTex t)
 ;; ;;Once Reftex is loaded, you can invoke the table of contents buffer with C-c =
 ;; (require 'tex-site)
 ;; (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
@@ -264,29 +266,33 @@
 
 ;; ;;--------------------------------------------
 ;; ;;sync inverse forward search -> for windows
-;; (custom-set-variables
-;;  ;; custom-set-variables was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(TeX-PDF-mode t)
-;;  '(TeX-master nil)
-;;  '(TeX-source-correlate-method (quote synctex))
-;;  '(TeX-source-correlate-mode t)
-;;  '(TeX-source-correlate-start-server t)
-;;  '(TeX-view-program-list
-;;    (quote
-;;     (("Sumatra PDF"
-;;       ("\"C:/Program Files (x86)/SumatraPDF/SumatraPDF.exe\" -reuse-instance"
-;;        (mode-io-correlate " -forward-search %b %n")
-;;        " %o")))))
-;;  '(TeX-view-program-selection
-;;    (quote
-;;     (((output-dvi style-pstricks)
-;;       "dvips and start")
-;;      (output-dvi "Yap")
-;;      (output-pdf "Sumatra PDF")
-;;      (output-html "start")))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(TeX-PDF-mode t)
+ '(TeX-master nil)
+ '(TeX-source-correlate-method (quote synctex))
+ '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
+ '(TeX-view-program-list
+   (quote
+    (("Sumatra PDF"
+      ("\"C:/Program Files/SumatraPDF/SumatraPDF.exe\" -reuse-instance"
+       (mode-io-correlate " -forward-search %b %n")
+       " %o")))))
+ '(TeX-view-program-selection
+   (quote
+    (((output-dvi style-pstricks)
+      "dvips and start")
+     (output-dvi "Yap")
+     (output-pdf "Sumatra PDF")
+     (output-html "start"))))
+ '(current-language-environment "ASCII")
+ '(inhibit-startup-screen t)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 ;; ;;--------------------------------------------
 
 ;; ;;------------------------------------------------
